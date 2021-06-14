@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/Value_To_Convert"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/value_to_convert"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/convert_From"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/convert_from"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Value_To_Convert" />
+
+    <TextView
+        android:id="@+id/convert_To"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/convert_to"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Value_To_Convert" />
+
+    <RadioGroup
+        android:id="@+id/unit_Options_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/fluid_Ounces"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/convert_From">
+
+        <RadioButton
+            android:id="@+id/fluid_Ounces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fluid_ounces_us" />
+
+        <RadioButton
+            android:id="@+id/cups_Us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/measuring_Cups" />
+
+        <RadioButton
+            android:id="@+id/gallons_Us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gallons_us" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/unit_Options_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/milliliters"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/convert_To">
+
+        <RadioButton
+            android:id="@+id/milliliters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/milliliters" />
+
+        <RadioButton
+            android:id="@+id/grams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grams" />
+
+        <RadioButton
+            android:id="@+id/liters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/liters" />
+
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/round_Up_Switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/round_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/unit_Options_1" />
+
+    <Button
+        android:id="@+id/convert_Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/round_Up_Switch" />
+
+    <TextView
+        android:id="@+id/conversion_Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/convert_Button"
+        tools:text="Result: 3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
